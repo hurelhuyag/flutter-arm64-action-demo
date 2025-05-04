@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-24.04-arm
+    name: Test /subosito/
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: latest
+
+      - run: flutter test
