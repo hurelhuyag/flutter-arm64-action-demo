@@ -1,15 +1,17 @@
 on:
   push:
-    - master
-    - main
+    branches:
+      - master
+      - main
   pull_request:
-    - master
-    - main
+    branches:
+      - master
+      - main
 
 jobs:
   hello_world_job:
     runs-on: ubuntu-24.04-arm
-    name: A job to say hello
+    name: Test
     steps:
       - uses: actions/checkout@v4
       - id: foo
