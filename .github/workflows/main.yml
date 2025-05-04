@@ -1,4 +1,10 @@
-on: [push]
+on:
+  push:
+    - master
+    - main
+  pull_request:
+    - master
+    - main
 
 jobs:
   hello_world_job:
