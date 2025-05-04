@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-24.04-arm
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v4
+      - id: foo
+        uses: hurelhuyag/flutter-arm64-action@HEAD
+        with:
+          channel: 'stable'
+      - run: flutter build linux --release
+        shell: bash
