@@ -11,4 +11,4 @@ jobs:
         with:
           channel: 'stable'
 
-      - run: flutter build linux --release
+      - run: flutter test
